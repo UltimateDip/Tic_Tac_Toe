@@ -104,12 +104,14 @@ class WinScreen extends StatelessWidget {
                         fontStyle: FontStyle.normal,
                       ),
                     ),
-                    onPressed: () {
-                      print('In WinScreen -->');
-                      print('1)player is $player');
-                      print('2)image is $image');
-                      print('3)tileDetails is $tileDetails');
-                      RestartWidget.restartApp(context);
+                    onPressed: () async {
+                      //for checking
+                      // print('In WinScreen -->');
+                      // print('1)player is $player');
+                      // print('2)image is $image');
+                      // print('3)tileDetails is $tileDetails');
+
+                      await RestartWidget.restartApp(context);
                     },
                   ),
                 ),

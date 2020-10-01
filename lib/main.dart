@@ -92,7 +92,13 @@ class _RestartWidgetState extends State<RestartWidget> {
         key = UniqueKey();
         player = playerCopy;
         image = imageCopy;
-        tileDetails = tileDetailsCopy;
+        tileDetails = List.from(tileDetailsCopy);
+
+        //for checking
+        // print('In Restart Widget -->');
+        // print('1)player is $player');
+        // print('2)image is $image');
+        // print('3)tileDetails is $tileDetails');
       },
     );
   }
