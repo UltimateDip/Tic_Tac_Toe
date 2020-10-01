@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:tic_tac_toe/tile.dart';
-import 'package:flutter_phoenix/flutter_phoenix.dart';
 import 'package:tic_tac_toe/data.dart';
 
 void main() {
@@ -15,7 +14,7 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: true, home: HomePage());
+    return MaterialApp(debugShowCheckedModeBanner: false, home: HomePage());
   }
 }
 
@@ -43,15 +42,9 @@ class _HomePageState extends State<HomePage> {
           crossAxisCount: 3,
           children: <Widget>[
             //leave the following 3 containers null
-            Container(
-              padding: const EdgeInsets.all(8),
-            ),
-            Container(
-              padding: const EdgeInsets.all(8),
-            ),
-            Container(
-              padding: const EdgeInsets.all(8),
-            ),
+            Container(padding: const EdgeInsets.all(8)),
+            Container(padding: const EdgeInsets.all(8)),
+            Container(padding: const EdgeInsets.all(8)),
             //Leave these top 3 containers null
 
             Container(child: Tile(tileNumber: 0)),

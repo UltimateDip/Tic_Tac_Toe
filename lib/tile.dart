@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:tic_tac_toe/CheckDraw.dart';
+import 'package:tic_tac_toe/DrawScreen.dart';
 import 'package:tic_tac_toe/WinScreen.dart';
 import 'CheckWin.dart';
 import 'data.dart';
@@ -27,6 +29,7 @@ class _TileState extends State<Tile> {
     } else if (player == 1) {
       image = 1;
     }
+
     tileDetails[widget.tileNumber] = [widget.tileNumber, image];
     setState(() {});
     int win = CheckWin()["win"];
@@ -44,6 +47,19 @@ class _TileState extends State<Tile> {
       //for checking
       // print('after push');
     }
+
+    if (CheckDraw()) {
+      print("draw");
+      await Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(
+          builder: (BuildContext context) {
+            return DrawScreen();
+          },
+        ),
+      );
+    }
+
     switchPlayer();
   }
 
@@ -56,6 +72,7 @@ class _TileState extends State<Tile> {
         padding: EdgeInsets.all(0.0),
         onPressed: () {
           if (tileDetails[widget.tileNumber][2]) {
+            // tileDetails[widget.tileNumber][2] = false;
             action();
           }
         },

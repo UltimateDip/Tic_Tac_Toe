@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:tic_tac_toe/data.dart';
 import 'package:tic_tac_toe/main.dart';
-import 'CheckWin.dart';
-import 'data.dart';
 
-class WinScreen extends StatelessWidget {
+class DrawScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.blue,
       appBar: AppBar(
         title: Center(
-          child: Text('Tic Tac Toe'),
+          child: Text('Draw'),
         ),
       ),
       body: SafeArea(
@@ -21,13 +20,13 @@ class WinScreen extends StatelessWidget {
           mainAxisSpacing: 10,
           crossAxisCount: 3,
           children: <Widget>[
-            //leave the following container null
+            //leave the following 3 containers null
             Container(padding: const EdgeInsets.all(8)),
             Container(padding: const EdgeInsets.all(8)),
             Container(padding: const EdgeInsets.all(8)),
-            //Leave these top 3 container null
+            //Leave these top 3 containers null
 
-            // below 9 containers are main tiles
+            //below 9 containers are main tile
             Container(
               padding: const EdgeInsets.all(8),
               color: Colors.white,
@@ -97,7 +96,7 @@ class WinScreen extends StatelessWidget {
                     ),
                     onPressed: () async {
                       //for checking
-                      // {print('In WinScreen -->');
+                      // {print('In DrawScreen -->');
                       // print('1)player is $player');
                       // print('2)image is $image');
                       // print('3)tileDetails is $tileDetails');}
@@ -115,18 +114,7 @@ class WinScreen extends StatelessWidget {
   }
 }
 
-// ignore: missing_return
-Widget lastScreen(int tileNumber) {
-  if (tileNumber == CheckWin()["tileNumbers"][0] ||
-      tileNumber == CheckWin()["tileNumbers"][1] ||
-      tileNumber == CheckWin()["tileNumbers"][2]) {
-    return Image.asset(
-      'images/image$image.png',
+Widget lastScreen(int tileNumber) => Image.asset(
+      'images/image${tileDetails[tileNumber][1]}.png',
       fit: BoxFit.fill,
     );
-  }
-  return Image.asset(
-    'images/image2.png',
-    fit: BoxFit.fill,
-  );
-}
