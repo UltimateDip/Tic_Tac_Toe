@@ -41,8 +41,8 @@ class _TileState extends State<Tile> {
           },
         ),
       );
-
-      print('after push');
+      //for checking
+      // print('after push');
     }
     switchPlayer();
   }
@@ -55,7 +55,9 @@ class _TileState extends State<Tile> {
       child: FlatButton(
         padding: EdgeInsets.all(0.0),
         onPressed: () {
-          action();
+          if (tileDetails[widget.tileNumber][2]) {
+            action();
+          }
         },
         child: Image.asset(
           'images/image$image.png',
